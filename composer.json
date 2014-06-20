@@ -1,0 +1,32 @@
+{
+    "name": "n3xtchen/Jawbone",
+    "type": "library",
+    "description": "PHP Jawbone Up Api",
+    "keywords": ["Jawbone", "Up", "Api", "PHP"],
+    "homepage": "",
+    "license": "GPL V2",
+    "authors": [
+      {
+        "name": "N3xtchen",
+        "email": "echenwen@gmail.com"
+      }
+    ],
+    "require": {
+      "php": ">=5.4.0",
+      "symfony/console": "~2.5",
+    },
+    "require-dev": {
+      "symfony/yaml": "~2.5"
+    }
+    "autoload": {
+      "psr-4": { 
+        "Jawbone\\": ""
+      }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+      "branch-alias": {
+        "dev-master": "0.1.0-dev"
+      }
+    }
+}
