@@ -20,7 +20,7 @@ PHP VERSION: `>=5.4`
 	```	
 	{
     	"require": {
-       		"Jawbone/Up": "0.1.0"
+       		"n3xtchen/jawbone": "0.1.0.x-dev"
    		}
 	} 
 	```
@@ -49,11 +49,11 @@ A app_secret attribute is required if you would like to use `refreshToken` to ge
 Use Jawbone\Up;
 
 //Jawbone Option
-$config = {
-  client_id: '123',
-  app_secret: 'abc',
-  access_token:  'xyz'
-}
+$config = [
+  'client_id'     => '123',
+  'client_secret' => 'abc',
+  'access_token'  => 'xyz'
+];
 
 $up = new Up($config);
 ```
@@ -62,23 +62,23 @@ $up = new Up($config);
 
 ```
 // get All events
-$up->get($endpoit)               // GET /nudge/api/v.1.1/users/@me/{$endpint}
+$up->get($event_name)               // GET /nudge/api/v.1.1/users/@me/{$event_name}
 
 // get a specific event
-$up->get($endpoit, $xid)        // GET /nudge/api/v.1.1/{$end_point}/{$xid}
+$up->get($event_name, $xid)        // GET /nudge/api/v.1.1/{$event_name}/{$xid}
 ```
 
 ### POST
 
 ```
-$up->post($endpoint, $data);   // POST /nudge/api/v.1.1/users/@me/{$endpoint} $data
+$up->post($event_name, $data);   // POST /nudge/api/v.1.1/users/@me/{$event_name} $data
 ```
 
 ### DELETE
 
 ```
 // delete a specific event
-$up->delete($endpoit, $xid);  // DELETE /nudge/api/v.1.1/{$end_point}/{$xid}
+$up->delete($event_name, $xid);  // DELETE /nudge/api/v.1.1/{$event_name}/{$xid}
 ```
 
 ## Console
@@ -96,11 +96,11 @@ use Symfony\Component\Console\Application;
 use Jawbone\UpCommand;
 
 //Jawbone Option
-$config = {
-  client_id: '123',
-  app_secret: 'abc',
-  access_token:  'xyz'
-}
+$config = [
+  'client_id'     => '123',
+  'client_secret' => 'abc',
+  'access_token'  => 'xyz'
+];
 
 $application = new Application();
 $application->add(new UpCommand($config));
@@ -110,7 +110,7 @@ $application->run();
 ### Usages
 
 ```
-$ php path/to/DemoConsole.php {$event_name} 
+$ php path/to/DemoConsole.php jawbone:up {$event_name} 
 	--X='POST|GET|PUT' 
 	--data='{"key":"value",...}' 
 ```
