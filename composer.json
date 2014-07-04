@@ -1,10 +1,9 @@
 {
-    "name": "n3xtchen/Jawbone",
+    "name": "n3xtchen/jawbone",
     "type": "library",
     "description": "PHP Jawbone Up Api",
     "keywords": ["Jawbone", "Up", "Api", "PHP"],
-    "homepage": "",
-    "license": "GPL V2",
+    "license": "GPL-2.0",
     "authors": [
       {
         "name": "N3xtchen",
@@ -17,7 +16,7 @@
     },
     "require-dev": {
       "symfony/yaml": "~2.5"
-    }
+    },
     "autoload": {
       "psr-4": { 
         "Jawbone\\": ""

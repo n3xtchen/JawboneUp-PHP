@@ -46,7 +46,7 @@ class Up
         $qs = '';
         if (!empty($data)) {
             $qd = [];
-            
+
             foreach ($data as $k => $v) {
                 $qd[] = $k.'='.urlencode($v);
             }
@@ -63,11 +63,11 @@ class Up
         $query_string = $this->arr2qs($data);
 
         // 初始化一个 cURL 对象
-        $curl = curl_init(); 
+        $curl = curl_init();
 
         // 设置参数
         $opts = [
-            CURLOPT_URL            => self::JWB_API.$uri,  
+            CURLOPT_URL            => self::JWB_API.$uri,
             // 设置header
             CURLOPT_HEADER         => 0,
             CURLOPT_HTTPHEADER     => [
@@ -95,21 +95,24 @@ class Up
 
     public function get($ep, $xid=null)
     {
-        $uri = (isset($xid) ? '' : 'users/@me/') 
-            . $ep 
+        $uri = (isset($xid) ? '' : 'users/@me/')
+            . $ep
             . (isset($xid) ? '/'.$xid : '');
+
         return $this->curl($uri);
     }
 
     public function post($ep, $data=[])
     {
         $uri = 'users/@me/'.$ep;
+
         return $this->curl($uri, 'POST', $data);
     }
 
     public function delete($ep, $xid)
     {
         $uri = $ep.'/'.$xid;
+
         return $this->curl($uri, 'DELETE');
     }
 }

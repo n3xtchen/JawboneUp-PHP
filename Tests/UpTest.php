@@ -19,8 +19,8 @@ class UpTest extends \PHPUnit_Framework_TestCase
     public $config;
     public $jawbone_up;
 
-    public function __construct() {
-
+    public function __construct() 
+    {
         $path = __DIR__.'/Fixtures';
         $yml  = new Parser();
         $this->config = $yml->parse(file_get_contents($path.'/JawboneOpts.yml'));
